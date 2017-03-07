@@ -53,7 +53,11 @@ public class Main {
             }
             else if(input.equals("PRINT")){
                 String json=gson.toJson(list);
-                System.out.println(json);
+                employee[] mcArray = gson.fromJson(json, employee[].class);
+                for(employee em : mcArray){
+                    System.out.println(em.toString());
+                }
+                //System.out.println(json);
             }
             else if(input.equals("CLR")){
                 list.clear();
